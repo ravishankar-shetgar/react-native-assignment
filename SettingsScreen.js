@@ -1,25 +1,25 @@
 // import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, Text, View } from 'react-native';
+import { Button, View } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
+import Text from './components/Text'
+import PageLink from './components/PageLink';
 import { Settings as styles } from './StyleSheets'
-// will contain the settings screen with links to profile
 
+
+// light grey border between sections
 const Separator = () => {
     return (
-        <View style={styles.separator}>
-
-        </View>
+        <View style={styles.separator}></View>
     )
 }
 
 export default function Settings(props) {
     return (
         <View style={styles.container}>
-
             <View style={styles.header}>
                 <AntDesign name="search1" size={30} color="black" />
 
@@ -36,25 +36,29 @@ export default function Settings(props) {
 
                 <View style={styles.userName}>
                     <Text>Welcome</Text>
-                    <Text style={styles.boldText}>Mr. Bakir Qara</Text>
+                    <Text font='bold'>Mr. Bakir Qara</Text>
                 </View>
 
                 <MaterialIcons name="logout" size={32} color="black" />
             </View>
 
+            <Separator />
+
             {/* list of pages */}
-            <View style={styles.links}>
-                <Text>Transfer funds</Text>
-                <Text>My Cards</Text>
+            <View style={styles.pageLinks}>
 
-                <Button title='Profile' onPress={() => props.navigation.navigate('Profile')}></Button>
-
-                <Text>Profile</Text>
-                <Text>Settings</Text>
+                <PageLink text='Transfer funds' icon="swap-horizontal" />
+                <PageLink text='My Cards' icon="swap-horizontal" />
+                <PageLink text='Profile' icon="swap-horizontal"
+                    onPress={() => props.navigation.navigate('Profile')} />
+                <PageLink text='Settings' icon="swap-horizontal" />
             </View>
 
             <View style={styles.help}>
-                <Text>How can we help you?</Text>
+                <View style={styles.helpIcon}>
+                    <MaterialIcons name="headset-mic" size={54} color="#2fc08c" />
+                </View>
+                <Text color='darkGreen' font='bold'>How can we help you?</Text>
 
             </View>
 
@@ -63,6 +67,9 @@ export default function Settings(props) {
                 <Text>imprint</Text>
                 <Text>English</Text>
             </View>
+
+            <Separator />
+
 
             <View style={styles.footer}>
                 <Text>Bolt Card 2020</Text>
