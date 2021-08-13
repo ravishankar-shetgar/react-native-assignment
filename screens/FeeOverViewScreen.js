@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 
 import { FeeOverViewScreen as styles } from './../StyleSheets'
 
@@ -59,17 +59,21 @@ export default function FeeOverViewScreen() {
 
     return (
         <View style={styles.container}>
-            {
-                cardData.map((item) => {
-                    return (
-                        <CardDetails
-                            data={item}
-                            onPress={(value) => { open_card_handler(value) }}
-                            key={item.key}
-                        />
-                    )
-                })
-            }
+
+            <ScrollView contentContainerStyle={styles.scrollView}>
+                {
+                    cardData.map((item) => {
+                        return (
+                            <CardDetails
+                                data={item}
+                                onPress={(value) => { open_card_handler(value) }}
+                                key={item.key}
+                            />
+                        )
+                    })
+                }
+            </ScrollView>
+
 
         </View>
     );

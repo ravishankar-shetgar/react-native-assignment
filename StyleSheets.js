@@ -98,13 +98,6 @@ export const Settings = StyleSheet.create({
         height: hp('9%'),
         alignItems: 'center'
     },
-    separator: {
-        borderTopWidth: 1,
-        borderColor: colors.lightGrey,
-        height: 1,
-        width: wp('95%'),
-        marginBottom: hp('1%')
-    },
     appIcon: {
         height: hp('6%'),
         width: hp('6%')
@@ -189,6 +182,87 @@ export const FeeOverViewScreen = StyleSheet.create({
     },
     iconColor: {
         color: colors.darkGrey
+    },
+    scrollView: {
+        flex: 1,
+        backgroundColor: colors.white,
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+    }
+})
+
+
+export const Separator = StyleSheet.create({
+    separator: {
+        borderTopWidth: 1,
+        borderColor: colors.lightGrey,
+        height: 1,
+        width: '95%',
+        marginBottom: hp('1%')
+    }
+});
+
+export const CardDetails = StyleSheet.create({
+    index: {
+        borderWidth: 1,
+        width: NORMAL * 2,
+        height: NORMAL * 2,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 100,
+        marginRight: wp('3%'),
+        borderColor: colors.lightGrey
+    },
+    closedCard: {
+        flexDirection: 'row',
+        width: '94%',
+        marginHorizontal: wp('1%'),
+        marginVertical: hp('1%'),
+        padding: hp('1.7%'),
+        borderWidth: 1,
+        borderColor: colors.lightGrey,
+        borderRadius: 10,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        elevation: 5,
+        backgroundColor: colors.white
+    },
+    cardDetails: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '100%',
+    },
+    closeIconColor: {
+        color: colors.green
+    },
+    cardDetailsOpen: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '100%',
+        marginBottom: hp('2%')
+    },
+    cardNo: {
+        alignContent: 'flex-start',
+        width: '78%'
+    },
+    openCard: {
+        flexDirection: 'column',
+        width: '94%',
+        marginVertical: hp('1%'),
+        padding: hp('1.7%'),
+        borderWidth: 2,
+        borderColor: colors.green,
+        borderRadius: 10,
+        alignItems: 'flex-start',
+        elevation: 10,
+        backgroundColor: colors.white
+    },
+    info: {
+        marginVertical: hp('1.5%'),
+        height: hp('6%'),
+        justifyContent: 'space-between'
     }
 })
 

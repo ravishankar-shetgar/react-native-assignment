@@ -14,12 +14,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 import profile from '../assets/profile.jpg'
 import reactNativeIcon from '../assets/react-native.png'
 
-// light grey border between sections
-const Separator = () => {
-    return (
-        <View style={styles.separator}></View>
-    )
-}
+import Separator from './../components/Seperator'
 
 export default function Settings(props) {
 
@@ -65,7 +60,7 @@ export default function Settings(props) {
                 <PageLink text='Transfer funds' icon="swap-horizontal" />
                 <PageLink text='My Cards' icon="card-outline" />
                 <PageLink text='Profile' icon="ios-person-outline"
-                    onPress={() => props.navigation.navigate('Fee')} />
+                    onPress={() => props.navigation.navigate('Profile')} />
                 <PageLink text='Settings' icon="settings-outline" />
             </View>
 
