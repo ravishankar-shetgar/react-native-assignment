@@ -2,16 +2,16 @@
 import React, { useState } from 'react';
 import { View, Image, TextInput, TouchableOpacity } from 'react-native';
 
-import Text from './components/Text'
-import { ProfileScreen as styles } from './StyleSheets'
+import Text from './../components/Text'
+import { ProfileScreen as styles } from './../StyleSheets'
 // will contain the settings screen with links to profile
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 import { MaterialIcons } from '@expo/vector-icons';
 
 
-import profile from './assets/profile.jpg'
-import InputWithLabel from './components/InputWithLabel';
+import profile from './../assets/profile.jpg'
+import InputWithLabel from './../components/InputWithLabel';
 
 export default function ProfileScreen() {
 

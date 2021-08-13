@@ -175,6 +175,23 @@ export const ProfileScreen = StyleSheet.create({
 })
 
 
+export const FeeOverViewScreen = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: colors.white,
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+    },
+    button: {
+        flexDirection: 'row',
+        alignContent: 'center',
+        alignItems: 'center',
+    },
+    iconColor: {
+        color: colors.darkGrey
+    }
+})
+
 export const Link = StyleSheet.create({
     button: {
         flexDirection: 'row',

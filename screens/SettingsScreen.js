@@ -4,15 +4,15 @@ import { Image, TouchableOpacity, View } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
-import Text from './components/Text'
-import PageLink from './components/PageLink';
-import { Settings as styles } from './StyleSheets'
-import Link from './components/Link'
+import Text from '../components/Text'
+import PageLink from '../components/PageLink';
+import { Settings as styles } from '../StyleSheets'
+import Link from '../components/Link'
 import DropDownPicker from 'react-native-dropdown-picker';
 
 
-import profile from './assets/profile.jpg'
-import reactNativeIcon from './assets/react-native.png'
+import profile from '../assets/profile.jpg'
+import reactNativeIcon from '../assets/react-native.png'
 
 // light grey border between sections
 const Separator = () => {
@@ -65,7 +65,7 @@ export default function Settings(props) {
                 <PageLink text='Transfer funds' icon="swap-horizontal" />
                 <PageLink text='My Cards' icon="card-outline" />
                 <PageLink text='Profile' icon="ios-person-outline"
-                    onPress={() => props.navigation.navigate('Profile')} />
+                    onPress={() => props.navigation.navigate('Fee')} />
                 <PageLink text='Settings' icon="settings-outline" />
             </View>
 
