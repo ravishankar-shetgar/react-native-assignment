@@ -8,7 +8,7 @@ export default InputWithLabel = (props) => {
     return (
 
         <View style={styles.inputView}>
-            <Text>{props.label}</Text>
+            <Text >{props.label}</Text>
             <View style={styles.input}>
                 {props.children}
             </View>

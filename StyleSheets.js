@@ -113,11 +113,13 @@ export const Settings = StyleSheet.create({
 })
 
 export const ProfileScreen = StyleSheet.create({
+    keyBoardAvoidingView: {
+        flex: 1,
+        backgroundColor: colors.white,
+    },
     container: {
         flex: 1,
         backgroundColor: colors.white,
-        alignItems: 'center',
-        justifyContent: 'flex-start',
     },
     profileImg: {
         height: hp('12%'),
@@ -131,6 +133,7 @@ export const ProfileScreen = StyleSheet.create({
         width: hp('13.5%'),
         borderRadius: 100,
         alignItems: 'center',
+        marginVertical: hp('4.5%'),
         justifyContent: 'center',
         shadowColor: colors.darkGrey,
     },
@@ -139,9 +142,19 @@ export const ProfileScreen = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 10,
         borderColor: colors.darkGrey,
-        paddingHorizontal: wp('2%'),
+        paddingHorizontal: wp('4%'),
         fontSize: NORMAL
-
+    },
+    radioButtonsView: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    radioButton: {
+        width: '48%',
+        marginHorizontal: wp('1%')
+    },
+    radioText: {
+        marginLeft: wp('2%')
     },
     iconColor: {
         color: colors.darkGrey
@@ -150,7 +163,7 @@ export const ProfileScreen = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: wp('2%'),
+        paddingHorizontal: wp('4%'),
         flex: 1,
         borderWidth: 1,
         borderRadius: 10,
@@ -162,7 +175,7 @@ export const ProfileScreen = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 10,
         borderColor: colors.darkGrey,
-        paddingHorizontal: wp('2%'),
+        paddingHorizontal: wp('4%'),
         fontSize: NORMAL
     }
 })
@@ -280,12 +293,13 @@ export const Link = StyleSheet.create({
 export const InputWithLabel = StyleSheet.create({
     inputView: {
         height: hp('11%'),
-        borderWidth: 1,
         width: '100%',
+        marginBottom: hp('2%'),
         paddingHorizontal: wp('3%')
     },
     input: {
-        height: '70%'
+        height: '70%',
+        marginTop: hp('0.5%')
     }
 })
 
