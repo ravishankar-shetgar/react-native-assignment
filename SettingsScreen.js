@@ -1,6 +1,6 @@
 // import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, View } from 'react-native';
+import { Image, TouchableOpacity, View } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -8,7 +8,9 @@ import { MaterialIcons } from '@expo/vector-icons';
 import Text from './components/Text'
 import PageLink from './components/PageLink';
 import { Settings as styles } from './StyleSheets'
+import Link from './components/Link'
 
+import profile from './assets/profile.jpg'
 
 // light grey border between sections
 const Separator = () => {
@@ -21,21 +23,23 @@ export default function Settings(props) {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <AntDesign name="search1" size={30} color="black" />
+                <AntDesign name="search1" size={25} color="black" />
 
-                <AntDesign name="inbox" size={30} color="black" />
+                <AntDesign name="inbox" size={25} color="black" />
 
-                <AntDesign name="closecircleo" size={30} color="black" />
+                <AntDesign name="closecircleo" size={25} color="black" />
             </View>
 
             <Separator />
 
             {/* profile info and logout button */}
             <View style={styles.profileSection}>
-                <Ionicons name="person-circle-outline" size={50} color="black" />
+                <View style={styles.profileImgView}>
+                    <Image source={profile} style={styles.profileImg} />
+                </View>
 
                 <View style={styles.userName}>
-                    <Text>Welcome</Text>
+                    <Text color={'darkGrey'}>Welcome</Text>
                     <Text font='bold'>Mr. Bakir Qara</Text>
                 </View>
 
@@ -48,31 +52,31 @@ export default function Settings(props) {
             <View style={styles.pageLinks}>
 
                 <PageLink text='Transfer funds' icon="swap-horizontal" />
-                <PageLink text='My Cards' icon="swap-horizontal" />
-                <PageLink text='Profile' icon="swap-horizontal"
+                <PageLink text='My Cards' icon="card-outline" />
+                <PageLink text='Profile' icon="ios-person-outline"
                     onPress={() => props.navigation.navigate('Profile')} />
-                <PageLink text='Settings' icon="swap-horizontal" />
+                <PageLink text='Settings' icon="settings-outline" />
             </View>
 
             <View style={styles.help}>
                 <View style={styles.helpIcon}>
-                    <MaterialIcons name="headset-mic" size={54} color="#2fc08c" />
+                    <MaterialIcons name="headset-mic" size={50} color="#2fc08c" />
                 </View>
                 <Text color='darkGreen' font='bold'>How can we help you?</Text>
 
             </View>
 
             <View style={styles.options}>
-                <Text>PRivacy policy</Text>
-                <Text>imprint</Text>
-                <Text>English</Text>
+                <Link text='Privacy Policy'></Link>
+                <Link text='Imprint'></Link>
+                <Link text='English'></Link>
             </View>
 
             <Separator />
 
 
             <View style={styles.footer}>
-                <Text>Bolt Card 2020</Text>
+                <Text size='subText' color='darkGrey'>© Bolt Card 2020</Text>
             </View>
 
 

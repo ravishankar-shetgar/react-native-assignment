@@ -13,7 +13,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
 
     let [fontsLoaded] = useFonts({
-        'Roboto-Light': require('./assets/fonts/Roboto-Light.ttf'),
+        'Roboto-Regular': require('./assets/fonts/Roboto-Regular.ttf'),
         'Roboto-Medium': require('./assets/fonts/Roboto-Medium.ttf')
     });
 

@@ -6,12 +6,12 @@ import {
     heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-const TEXT_REGULAR = 'Roboto-Light';
+const TEXT_REGULAR = 'Roboto-Regular';
 const TEXT_BOLD = 'Roboto-Medium'
 
-const HEADING = 30;
-const NORMAL = 20;
-const SUBTEXT = 12;
+const HEADING = 28;
+const NORMAL = 18;
+const SUBTEXT = 14;
 
 const colors = {
     black: '#000000',
@@ -34,7 +34,7 @@ export const Settings = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '100%',
-        height: hp('8%'),
+        height: hp('9.5%'),
         alignItems: 'center',
         paddingHorizontal: wp('4%')
     },
@@ -44,6 +44,22 @@ export const Settings = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         paddingHorizontal: wp('3%'),
+    },
+    profileImg: {
+        height: hp('6%'),
+        width: hp('6%'),
+        borderRadius: 100,
+    },
+    profileImgView: {
+        marginLeft: wp('1%'),
+        elevation: 20,
+        backgroundColor: colors.white,
+        height: hp('6.5%'),
+        width: hp('6.5%'),
+        borderRadius: 100,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: colors.darkGrey,
     },
     userName: {
         flexDirection: 'column',
@@ -58,32 +74,35 @@ export const Settings = StyleSheet.create({
     help: {
         width: '94%',
         alignItems: 'center',
-        height: hp('13%'),
+        height: hp('12%'),
         flexDirection: 'row',
         borderRadius: 20,
         paddingHorizontal: wp('5%'),
         backgroundColor: colors.lightGreen
     },
     helpIcon: {
-        marginRight: wp('4%')
+        marginRight: wp('5%')
     },
     options: {
         width: '100%',
         height: hp('12%'),
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: wp('1%')
     },
     footer: {
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'center',
         height: hp('10%'),
+        alignItems: 'center'
     },
     separator: {
         borderTopWidth: 1,
         borderColor: colors.lightGrey,
         height: 1,
-        width: wp('97%'),
+        width: wp('95%'),
         marginBottom: hp('1%')
     },
 })
@@ -95,11 +114,49 @@ export const Profile = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
     },
+    profileImg: {
+        height: hp('12%'),
+        width: hp('12%'),
+        borderRadius: 100,
+    },
+    profileImgView: {
+        elevation: 20,
+        backgroundColor: colors.white,
+        height: hp('13.5%'),
+        width: hp('13.5%'),
+        borderRadius: 100,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: colors.darkGrey,
+    },
+    input: {
+        width: '100%',
+        height: 20,
+        borderWidth: 1
+    }
+})
+
+
+export const Link = StyleSheet.create({
+    button: {
+        flexDirection: 'row',
+        paddingHorizontal: wp('6%'),
+        alignContent: 'center',
+        alignItems: 'center',
+    },
+})
+
+export const InputWi = StyleSheet.create({
+    button: {
+        flexDirection: 'row',
+        paddingHorizontal: wp('6%'),
+        alignContent: 'center',
+        alignItems: 'center',
+    },
 })
 
 export const PageLink = StyleSheet.create({
     button: {
-        borderWidth: 1,
         flexDirection: 'row',
         width: '100%',
         paddingHorizontal: wp('6%'),
@@ -107,6 +164,11 @@ export const PageLink = StyleSheet.create({
         height: hp('8%'),
         alignItems: 'center',
         marginVertical: hp('0.8%')
+    },
+    text: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        width: '80%'
     }
 })
 

@@ -14,7 +14,10 @@ export default PageLink = (props) => {
             onPress={() => { props.onPress() }}
         >
             <Ionicons name={props.icon} size={24} color="black" />
-            <Text>{props.text}</Text>
+
+            <View style={styles.text}>
+                <Text>{props.text}</Text>
+            </View>
             <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
 
         </TouchableOpacity>

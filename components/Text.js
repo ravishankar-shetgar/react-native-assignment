@@ -9,10 +9,20 @@ export default Text = (props) => {
     let textFont = styles[props.font] || styles.regular
 
     // black/darkGrey
-    let textColor = styles[props.color] || styles.black
+    let textColor = null;
+
+    switch (props.color) {
+        case 'darkGrey':
+            textColor = styles.darkGrey;
+            break;
+        default:
+            textColor = styles.black
+    }
 
     // heading/subText/normal
     let textSize = styles[props.size] || styles.normal;
+
+    console.log('aaa', [textFont, textColor, textSize]);
 
     return (
         <NativeTextComponent
