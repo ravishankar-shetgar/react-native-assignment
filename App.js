@@ -9,6 +9,8 @@ import SettingsScreen from './screens/SettingsScreen'
 import ProfileScreen from './screens/ProfileScreen'
 import FeeOverViewScreen from './screens/FeeOverViewScreen'
 
+import ProfileSection from './screens/ProfileSection';
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -27,7 +29,10 @@ export default function App() {
                     screenOptions={{ headerShown: false }}
                 >
                     <Stack.Screen name="Settings" component={SettingsScreen} />
-                    <Stack.Screen name="Profile" component={ProfileScreen} />
+                    <Stack.Screen name="ProfileSection" component={ProfileSection}
+                        screenOptions={{ headerShown: false }}
+                    />
+                    {/* <Stack.Screen name="Profile" component={ProfileScreen} /> */}
                     <Stack.Screen name="Fee" component={FeeOverViewScreen} />
                 </Stack.Navigator>
             </NavigationContainer>

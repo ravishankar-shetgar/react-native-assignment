@@ -23,7 +23,7 @@ export default function Settings(props) {
 
     // drop down controls
     const [open, setOpen] = useState(false);
-    const [value, setValue] = useState(null);
+    const [value, setValue] = useState('English');
     // drop down options
     const [items, setItems] = useState([
         { label: 'English', value: 'English' },
@@ -80,7 +80,7 @@ export default function Settings(props) {
                 <PageLink
                     text='Profile'
                     icon="ios-person-outline"
-                    onPress={() => props.navigation.navigate('Profile')}
+                    onPress={() => props.navigation.navigate('ProfileSection')}
                 />
                 <PageLink
                     text='Settings'
@@ -119,6 +119,8 @@ export default function Settings(props) {
                         setOpen={setOpen}
                         setValue={setValue}
                         setItems={setItems}
+                        style={styles.dropDown}
+                        labelStyle={styles.dropDownText}
                     />
                 </View>
 

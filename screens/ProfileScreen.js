@@ -7,6 +7,7 @@ import DateTimePickerModal from "react-native-modal-datetime-picker";
 import RadioButtonRN from 'radio-buttons-react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
 // ---- COMPONENTS ----
 import InputWithLabel from './../components/InputWithLabel';
@@ -38,79 +39,76 @@ export default function ProfileScreen() {
     return (
         <View style={styles.container}>
 
-            <KeyboardAvoidingView style={styles.keyBoardAvoidingView}
-                behavior='padding'
-            // keyboardVerticalOffset={200}
-            >
-
-                <View style={styles.profileImgView}>
-                    <Image source={profile} style={styles.profileImg} />
+            <View style={styles.profileImgView}>
+                <Image source={profile} style={styles.profileImg} />
+                <View style={styles.cameraIcon}>
+                    <Feather name="camera" size={24} color="white" />
                 </View>
+            </View>
 
-                <InputWithLabel
-                    label='Name on Card'>
-                    <TextInput
-                        placeholder={'Name'}
-                        style={styles.textInput}></TextInput>
-                </InputWithLabel>
+            <InputWithLabel
+                label='Name on Card'>
+                <TextInput
+                    placeholder={'Name'}
+                    style={styles.textInput}></TextInput>
+            </InputWithLabel>
 
-                <InputWithLabel
-                    label='Date of Birth'>
+            <InputWithLabel
+                label='Date of Birth'>
 
-                    <TouchableOpacity
-                        style={styles.dateTimePicker}
-                        onPress={() => { view_date_picker_handler() }}
-                    >
-                        <Text color='darkGrey'>{dateTime}</Text>
-                        <MaterialIcons name="keyboard-arrow-down" size={24} color={styles.iconColor.color} />
-                    </TouchableOpacity>
-                </InputWithLabel>
+                <TouchableOpacity
+                    style={styles.dateTimePicker}
+                    onPress={() => { view_date_picker_handler() }}
+                >
+                    <Text color='darkGrey'>{dateTime}</Text>
+                    <MaterialIcons name="keyboard-arrow-down" size={24} color={styles.iconColor.color} />
+                </TouchableOpacity>
+            </InputWithLabel>
 
-                <InputWithLabel
-                    label='Gender'>
-                    <RadioButtonRN
-                        data={data}
-                        selectedBtn={(e) => console.log(e)}
-                        style={styles.radioButtonsView}
-                        boxStyle={styles.radioButton}
-                        textStyle={styles.radioText}
-                        icon={
-                            <FontAwesome5 name="check-circle" size={24} color="black" />
-                        }
-                    >
-                    </RadioButtonRN>
-                </InputWithLabel>
+            <InputWithLabel
+                label='Gender'>
+                <RadioButtonRN
+                    data={data}
+                    selectedBtn={(e) => console.log(e)}
+                    style={styles.radioButtonsView}
+                    boxStyle={styles.radioButton}
+                    textStyle={styles.radioText}
+                    icon={
+                        <FontAwesome5 name="check-circle" size={24} color="black" />
+                    }
+                >
+                </RadioButtonRN>
+            </InputWithLabel>
 
 
-                <InputWithLabel
-                    label='Address'>
-                    <TextInput
-                        placeholder={'Address'}
-                        style={styles.textInput}
-                        numberOfLines={3}
-                    ></TextInput>
-                </InputWithLabel>
+            <InputWithLabel
+                label='Address'>
+                <TextInput
+                    placeholder={'Address'}
+                    style={styles.textInput}
+                    numberOfLines={3}
+                ></TextInput>
+            </InputWithLabel>
 
-                <InputWithLabel
-                    label='ID'>
-                    <TextInput
-                        value={'#554544'}
-                        editable={false}
-                        style={styles.idTextInput}></TextInput>
-                </InputWithLabel>
+            <InputWithLabel
+                label='ID'>
+                <TextInput
+                    value={'#554544'}
+                    editable={false}
+                    style={styles.idTextInput}></TextInput>
+            </InputWithLabel>
 
-                {/* will show when button is pressed */}
-                <DateTimePickerModal
-                    isVisible={isDatePickerVisible}
-                    mode="datetime"
-                    display='spinner'
-                    minimumDate={new Date()} // minimum date is today 
-                    // data returned is a JS date object
-                    onConfirm={(value) => set_date_time_handler(value)}
-                    onCancel={() => { console.log('date picker cancelled'); }}
-                />
+            {/* will show when button is pressed */}
+            <DateTimePickerModal
+                isVisible={isDatePickerVisible}
+                mode="datetime"
+                display='spinner'
+                minimumDate={new Date()} // minimum date is today 
+                // data returned is a JS date object
+                onConfirm={(value) => set_date_time_handler(value)}
+                onCancel={() => { console.log('date picker cancelled'); }}
+            />
 
-            </KeyboardAvoidingView>
         </View>
     );
 }

@@ -109,17 +109,20 @@ export const Settings = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-end'
     },
-
+    dropDown: {
+        borderWidth: 0
+    },
+    dropDownText: {
+        color: colors.darkGrey
+    }
 })
 
 export const ProfileScreen = StyleSheet.create({
-    keyBoardAvoidingView: {
-        flex: 1,
-        backgroundColor: colors.white,
-    },
     container: {
         flex: 1,
         backgroundColor: colors.white,
+        alignItems: 'center',
+        justifyContent: 'flex-start',
     },
     profileImg: {
         height: hp('12%'),
@@ -136,6 +139,19 @@ export const ProfileScreen = StyleSheet.create({
         marginVertical: hp('4.5%'),
         justifyContent: 'center',
         shadowColor: colors.darkGrey,
+    },
+    cameraIcon: {
+        position: 'absolute',
+        backgroundColor: colors.green,
+        height: hp('6%'),
+        width: hp('6%'),
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 50,
+        borderWidth: 5,
+        borderColor: colors.white,
+        top: 0,
+        right: hp('-2%')
     },
     textInput: {
         flex: 1,
