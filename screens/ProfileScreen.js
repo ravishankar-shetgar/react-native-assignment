@@ -30,6 +30,7 @@ export default function ProfileScreen() {
         set_date_picker_visible(!isDatePickerVisible);
     }
 
+    console.log(isDatePickerVisible);
     // radio button options
     const data = [
         { label: 'Male' },
@@ -106,7 +107,7 @@ export default function ProfileScreen() {
                 minimumDate={new Date()} // minimum date is today 
                 // data returned is a JS date object
                 onConfirm={(value) => set_date_time_handler(value)}
-                onCancel={() => { console.log('date picker cancelled'); }}
+                onCancel={() => { set_date_picker_visible(!isDatePickerVisible) }}
             />
 
         </View>

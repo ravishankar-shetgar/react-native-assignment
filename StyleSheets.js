@@ -117,12 +117,27 @@ export const Settings = StyleSheet.create({
     }
 })
 
+
+export const Navigation = StyleSheet.create({
+    header: {
+        flexDirection: 'row',
+        width: '90%',
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
+    headerTitle: {
+        marginLeft: 90
+    }
+});
+
 export const ProfileScreen = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.white,
         alignItems: 'center',
         justifyContent: 'flex-start',
+        padding: wp('1%')
     },
     profileImg: {
         height: hp('12%'),
@@ -136,7 +151,7 @@ export const ProfileScreen = StyleSheet.create({
         width: hp('13.5%'),
         borderRadius: 100,
         alignItems: 'center',
-        marginVertical: hp('4.5%'),
+        marginVertical: hp('3%'),
         justifyContent: 'center',
         shadowColor: colors.darkGrey,
     },
@@ -203,6 +218,7 @@ export const FeeOverViewScreen = StyleSheet.create({
         backgroundColor: colors.white,
         alignItems: 'center',
         justifyContent: 'flex-start',
+        paddingTop: 20
     },
     button: {
         flexDirection: 'row',
