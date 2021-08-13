@@ -2,44 +2,42 @@
 import React, { useState } from 'react';
 import { View, Image, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 
-import Text from './../components/Text'
-import { ProfileScreen as styles } from './../StyleSheets'
-// will contain the settings screen with links to profile
+// ----- PACKAGES ----
 import DateTimePickerModal from "react-native-modal-datetime-picker";
-
-import { MaterialIcons } from '@expo/vector-icons';
 import RadioButtonRN from 'radio-buttons-react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-
-import profile from './../assets/profile.jpg'
+// ---- COMPONENTS ----
 import InputWithLabel from './../components/InputWithLabel';
+import Text from './../components/Text'
+import { ProfileScreen as styles } from './../StyleSheets'
+
+// ---- ASSETS ----
+import profile from './../assets/profile.jpg'
 
 export default function ProfileScreen() {
 
+    // store date time
     const [dateTime, set_date_time] = useState('Choose')
     const set_date_time_handler = (value) => {
         set_date_time(value.toDateString());
     }
-    // --Show date time picker
+    // Show date time picker
     const [isDatePickerVisible, set_date_picker_visible] = useState(false);
     const view_date_picker_handler = () => {
         set_date_picker_visible(!isDatePickerVisible);
     }
 
+    // radio button options
     const data = [
-        {
-            label: 'Male'
-        },
-        {
-            label: 'Female'
-        }
+        { label: 'Male' },
+        { label: 'Female' }
     ];
-
-
 
     return (
         <View style={styles.container}>
+
             <KeyboardAvoidingView style={styles.keyBoardAvoidingView}
                 behavior='padding'
             // keyboardVerticalOffset={200}
@@ -79,7 +77,6 @@ export default function ProfileScreen() {
                         icon={
                             <FontAwesome5 name="check-circle" size={24} color="black" />
                         }
-
                     >
                     </RadioButtonRN>
                 </InputWithLabel>
@@ -102,14 +99,7 @@ export default function ProfileScreen() {
                         style={styles.idTextInput}></TextInput>
                 </InputWithLabel>
 
-
-
-
-
-
-
-
-
+                {/* will show when button is pressed */}
                 <DateTimePickerModal
                     isVisible={isDatePickerVisible}
                     mode="datetime"
@@ -120,16 +110,7 @@ export default function ProfileScreen() {
                     onCancel={() => { console.log('date picker cancelled'); }}
                 />
 
-
             </KeyboardAvoidingView>
-
         </View>
-
-
-
-
-
-
-
     );
 }

@@ -1,25 +1,30 @@
-// import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Image, TouchableOpacity, View } from 'react-native';
+
+// ----- PACKAGES ----
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import DropDownPicker from 'react-native-dropdown-picker';
 
+
+// ---- COMPONENTS ----
 import Text from '../components/Text'
 import PageLink from '../components/PageLink';
 import { Settings as styles } from '../StyleSheets'
 import Link from '../components/Link'
-import DropDownPicker from 'react-native-dropdown-picker';
+import Separator from './../components/Seperator'
 
-
+// ---- ASSETS ----
 import profile from '../assets/profile.jpg'
 import reactNativeIcon from '../assets/react-native.png'
 
-import Separator from './../components/Seperator'
 
 export default function Settings(props) {
 
+    // drop down controls
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
+    // drop down options
     const [items, setItems] = useState([
         { label: 'English', value: 'English' },
         { label: 'French', value: 'French' },
@@ -28,6 +33,8 @@ export default function Settings(props) {
 
     return (
         <View style={styles.container}>
+
+            {/* header */}
             <View style={styles.header}>
                 <AntDesign name="search1" size={25} color="black" />
 
@@ -40,6 +47,7 @@ export default function Settings(props) {
 
             {/* profile info and logout button */}
             <View style={styles.profileSection}>
+
                 <View style={styles.profileImgView}>
                     <Image source={profile} style={styles.profileImg} />
                 </View>
@@ -50,31 +58,59 @@ export default function Settings(props) {
                 </View>
 
                 <MaterialIcons name="logout" size={25} color="black" />
+
             </View>
 
             <Separator />
 
-            {/* list of pages */}
+            {/* navigate to pages */}
             <View style={styles.pageLinks}>
 
-                <PageLink text='Transfer funds' icon="swap-horizontal" />
-                <PageLink text='My Cards' icon="card-outline" />
-                <PageLink text='Profile' icon="ios-person-outline"
-                    onPress={() => props.navigation.navigate('Profile')} />
-                <PageLink text='Settings' icon="settings-outline" />
+                <PageLink
+                    text='Transfer funds'
+                    icon="swap-horizontal"
+                    onPress={() => { console.log('Transfer Screen'); }}
+                />
+
+                <PageLink
+                    text='My Cards'
+                    icon="card-outline"
+                    onPress={() => { console.log('My Cards Screen'); }}
+                />
+                <PageLink
+                    text='Profile'
+                    icon="ios-person-outline"
+                    onPress={() => props.navigation.navigate('Profile')}
+                />
+                <PageLink
+                    text='Settings'
+                    icon="settings-outline"
+                    onPress={() => { console.log('Settings Screen'); }}
+                />
+
             </View>
 
-            <TouchableOpacity style={styles.help}>
+            {/* go to help section */}
+            <TouchableOpacity
+                style={styles.help}
+                onPress={() => { console.log('Help Screen'); }}
+            >
                 <View style={styles.helpIcon}>
                     <MaterialIcons name="headset-mic" size={50} color="#2fc08c" />
                 </View>
+
                 <Text color='darkGreen' font='bold'>How can we help you?</Text>
+
             </TouchableOpacity>
 
+            {/* more options and links */}
             <View style={styles.options}>
+
                 <Link text='Privacy Policy'></Link>
+
                 <Link text='Imprint'></Link>
 
+                {/* language drop down picker */}
                 <View style={styles.langPicker}>
                     <DropDownPicker
                         open={open}
@@ -86,19 +122,14 @@ export default function Settings(props) {
                     />
                 </View>
 
-
-
             </View>
 
             <Separator />
 
-
+            {/* copyright statement */}
             <View style={styles.footer}>
                 <Text size='subText' color='darkGrey'>© Bolt Card 2020</Text>
             </View>
-
-
-
 
         </View>
     );
