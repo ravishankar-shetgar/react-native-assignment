@@ -6,8 +6,8 @@ import {
     heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-const TEXT_REGULAR = 'Roboto-Regular';
-const TEXT_BOLD = 'Roboto-Medium'
+const REGULAR_FONT = 'Roboto-Regular';
+const BOLD_FONT = 'Roboto-Medium'
 
 const HEADING = 28;
 const NORMAL = 18;
@@ -16,8 +16,8 @@ const SUBTEXT = 14;
 const colors = {
     black: '#000000',
     white: '#ffffff',
-    darkGrey: '#333333',
-    lightGrey: '#DDDDDD',
+    darkGrey: '#828282',
+    lightGrey: '#EEEEEE',
     green: '#2fc08c',
     darkGreen: '#336553',
     lightGreen: '#edfaf5'
@@ -36,14 +36,14 @@ export const Settings = StyleSheet.create({
         width: '100%',
         height: hp('9.5%'),
         alignItems: 'center',
-        paddingHorizontal: wp('4%')
+        paddingHorizontal: wp('6%')
     },
     profileSection: {
         width: '100%',
         height: hp('12%'),
         alignItems: 'center',
         flexDirection: 'row',
-        paddingHorizontal: wp('3%'),
+        paddingHorizontal: wp('3.5%'),
     },
     profileImg: {
         height: hp('6%'),
@@ -64,7 +64,7 @@ export const Settings = StyleSheet.create({
     userName: {
         flexDirection: 'column',
         flex: 3,
-        marginHorizontal: wp('3%')
+        marginHorizontal: wp('5%')
     },
     pageLinks: {
         width: '100%',
@@ -89,13 +89,13 @@ export const Settings = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingHorizontal: wp('1%')
+        paddingHorizontal: wp('4%'),
     },
     footer: {
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'center',
-        height: hp('10%'),
+        height: hp('9%'),
         alignItems: 'center'
     },
     separator: {
@@ -105,9 +105,21 @@ export const Settings = StyleSheet.create({
         width: wp('95%'),
         marginBottom: hp('1%')
     },
+    appIcon: {
+        height: hp('6%'),
+        width: hp('6%')
+    },
+    langPicker: {
+        width: '30%',
+        height: hp('10%'),
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-end'
+    },
+
 })
 
-export const Profile = StyleSheet.create({
+export const ProfileScreen = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.white,
@@ -129,10 +141,36 @@ export const Profile = StyleSheet.create({
         justifyContent: 'center',
         shadowColor: colors.darkGrey,
     },
-    input: {
-        width: '100%',
-        height: 20,
-        borderWidth: 1
+    textInput: {
+        flex: 1,
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor: colors.darkGrey,
+        paddingHorizontal: wp('2%'),
+        fontSize: NORMAL
+
+    },
+    iconColor: {
+        color: colors.darkGrey
+    },
+    dateTimePicker: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: wp('2%'),
+        flex: 1,
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor: colors.darkGrey
+    },
+    idTextInput: {
+        backgroundColor: colors.lightGrey,
+        flex: 1,
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor: colors.darkGrey,
+        paddingHorizontal: wp('2%'),
+        fontSize: NORMAL
     }
 })
 
@@ -140,26 +178,31 @@ export const Profile = StyleSheet.create({
 export const Link = StyleSheet.create({
     button: {
         flexDirection: 'row',
-        paddingHorizontal: wp('6%'),
         alignContent: 'center',
         alignItems: 'center',
     },
+    iconColor: {
+        color: colors.darkGrey
+    }
 })
 
-export const InputWi = StyleSheet.create({
-    button: {
-        flexDirection: 'row',
-        paddingHorizontal: wp('6%'),
-        alignContent: 'center',
-        alignItems: 'center',
+export const InputWithLabel = StyleSheet.create({
+    inputView: {
+        height: hp('11%'),
+        borderWidth: 1,
+        width: '100%',
+        paddingHorizontal: wp('3%')
     },
+    input: {
+        height: '70%'
+    }
 })
 
 export const PageLink = StyleSheet.create({
     button: {
         flexDirection: 'row',
         width: '100%',
-        paddingHorizontal: wp('6%'),
+        paddingHorizontal: wp('7%'),
         justifyContent: 'space-between',
         height: hp('8%'),
         alignItems: 'center',
@@ -168,17 +211,17 @@ export const PageLink = StyleSheet.create({
     text: {
         flexDirection: 'row',
         justifyContent: 'flex-start',
-        width: '80%'
+        width: '78%'
     }
 })
 
 export const Text = StyleSheet.create({
     // font style
     bold: {
-        fontFamily: TEXT_BOLD,
+        fontFamily: BOLD_FONT,
     },
     regular: {
-        fontFamily: TEXT_REGULAR,
+        fontFamily: REGULAR_FONT,
     },
     // colors
     black: {

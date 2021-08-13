@@ -7,9 +7,11 @@ import { InputWithLabel as styles } from './../StyleSheets'
 export default InputWithLabel = (props) => {
     return (
 
-        <View style={styles.input}>
+        <View style={styles.inputView}>
             <Text>{props.label}</Text>
-            {...props.children}
+            <View style={styles.input}>
+                {props.children}
+            </View>
         </View>
 
 

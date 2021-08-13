@@ -7,8 +7,8 @@ import { Link as styles } from './../StyleSheets'
 export default Link = (props) => {
     return (
         <TouchableOpacity style={styles.button}>
-            <Text size={'subText'}>{props.text}</Text>
-            <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
+            <Text size={'subText'} color='darkGrey'>{props.text}</Text>
+            <MaterialIcons name="keyboard-arrow-right" size={24} color={styles.iconColor.color} />
 
         </TouchableOpacity>
     )

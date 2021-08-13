@@ -22,8 +22,6 @@ export default Text = (props) => {
     // heading/subText/normal
     let textSize = styles[props.size] || styles.normal;
 
-    console.log('aaa', [textFont, textColor, textSize]);
-
     return (
         <NativeTextComponent
             style={[textFont, textColor, textSize]}
