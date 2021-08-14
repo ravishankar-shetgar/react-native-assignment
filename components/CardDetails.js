@@ -8,19 +8,19 @@ import Separator from '../components/Seperator'
 import { CardDetails as styles } from './../StyleSheets'
 
 export default CardDetails = (props) => {
-
-    if (props.data.isOpen) {
+    console.log(props.data);
+    if (props.data.item.isOpen) {
         return (
             <TouchableOpacity
                 style={styles.openCard}
-                onPress={() => props.onPress(props.data.key)}
+                onPress={() => props.onPress()}
             >
                 <View style={styles.cardDetailsOpen}>
                     <View style={styles.index}>
-                        <Text>{props.data.key}</Text>
+                        <Text>{props.data.item.key}</Text>
                     </View>
                     <View style={styles.cardNo}>
-                        <Text>{props.data.cardNo}</Text>
+                        <Text>{props.data.item.cardNo}</Text>
                     </View>
                     <MaterialIcons name="keyboard-arrow-up" size={24} color={styles.closeIconColor.color} />
                 </View>
@@ -29,17 +29,17 @@ export default CardDetails = (props) => {
 
                 <View style={styles.info}>
                     <Text font='bold' size='subText'>Monthly Card Maintenance Fee</Text>
-                    <Text size='subText' >{props.data.maintenanceFee}</Text>
+                    <Text size='subText' >{props.data.item.maintenanceFee}</Text>
                 </View>
 
                 <View style={styles.info}>
                     <Text font='bold' size='subText'>Next Billing Date</Text>
-                    <Text size='subText' >{props.data.nxtBillingDate}</Text>
+                    <Text size='subText' >{props.data.item.nxtBillingDate}</Text>
                 </View>
 
                 <View style={styles.info}>
                     <Text font='bold' size='subText'>Transaction Fee For Every Transaction</Text>
-                    <Text size='subText' >{props.data.transactionFee}</Text>
+                    <Text size='subText' >{props.data.item.transactionFee}</Text>
                 </View>
 
             </TouchableOpacity>
@@ -50,15 +50,15 @@ export default CardDetails = (props) => {
         return (
             <TouchableOpacity
                 style={styles.closedCard}
-                onPress={() => props.onPress(props.data.key)}
+                onPress={() => props.onPress()}
             >
                 <View style={styles.cardDetails}>
                     <View style={styles.index}>
-                        <Text>{props.data.key}</Text>
+                        <Text>{props.data.item.key}</Text>
                     </View>
 
                     <View style={styles.cardNo}>
-                        <Text>{props.data.cardNo}</Text>
+                        <Text>{props.data.item.cardNo}</Text>
                     </View>
 
                     <MaterialIcons name="keyboard-arrow-down" size={24} color="black" />

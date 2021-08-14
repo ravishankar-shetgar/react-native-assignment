@@ -15,6 +15,9 @@ export default Text = (props) => {
         case 'darkGrey':
             textColor = styles.darkGrey;
             break;
+        case 'white':
+            textColor = styles.white;
+            break;
         default:
             textColor = styles.black
     }

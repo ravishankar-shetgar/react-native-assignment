@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { View, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import { View, FlatList } from 'react-native';
 
+// ---- COMPONENTS ----
 import { FeeOverViewScreen as styles } from './../StyleSheets'
-
 import CardDetails from '../components/CardDetails';
 
 export default function FeeOverViewScreen() {
-
 
     const [cardData, set_card_data] = useState([
         {
@@ -59,22 +58,19 @@ export default function FeeOverViewScreen() {
 
     return (
         <View style={styles.container}>
-
-            <ScrollView contentContainerStyle={styles.scrollView}>
-                {
-                    cardData.map((item) => {
-                        return (
-                            <CardDetails
-                                data={item}
-                                onPress={(value) => { open_card_handler(value) }}
-                                key={item.key}
-                            />
-                        )
-                    })
-                }
-            </ScrollView>
-
-
+            <FlatList
+                data={cardData}
+                keyExtractor={(item) => item.key.toString()}
+                renderItem={(item) => {
+                    return (
+                        <CardDetails
+                            data={item}
+                            onPress={() => { open_card_handler(item.item.key) }}
+                        />
+                    )
+                }}
+            >
+            </FlatList>
         </View>
     );
 }

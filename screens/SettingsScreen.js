@@ -16,7 +16,7 @@ import Separator from './../components/Seperator'
 
 // ---- ASSETS ----
 import profile from '../assets/profile.jpg'
-import reactNativeIcon from '../assets/react-native.png'
+import reactNativeIcon from '../assets/icons/react-native.png'
 
 
 export default function Settings(props) {
@@ -57,7 +57,10 @@ export default function Settings(props) {
                     <Text font='bold'>Mr. Bakir Qara</Text>
                 </View>
 
-                <MaterialIcons name="logout" size={25} color="black" />
+                <Image
+                    source={require('./../assets/icons/logout.png')}
+                    style={styles.logoutIcon}
+                ></Image>
 
             </View>
 

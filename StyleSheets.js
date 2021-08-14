@@ -9,13 +9,14 @@ import {
 const REGULAR_FONT = 'Roboto-Regular';
 const BOLD_FONT = 'Roboto-Medium'
 
-const HEADING = 28;
+const HEADING = 24;
 const NORMAL = 18;
 const SUBTEXT = 14;
 
 const colors = {
     black: '#000000',
-    white: '#ffffff',
+    white: '#FFFFFF',
+    darkBlue: '#17202c',
     darkGrey: '#828282',
     lightGrey: '#EEEEEE',
     green: '#2fc08c',
@@ -37,6 +38,10 @@ export const Settings = StyleSheet.create({
         height: hp('9.5%'),
         alignItems: 'center',
         paddingHorizontal: wp('6%')
+    },
+    logoutIcon: {
+        height: 30,
+        width: 30
     },
     profileSection: {
         width: '100%',
@@ -118,17 +123,59 @@ export const Settings = StyleSheet.create({
 })
 
 
-export const Navigation = StyleSheet.create({
+export const ProfileSection = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: colors.white,
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        padding: wp('1%')
+    },
     header: {
         flexDirection: 'row',
-        width: '90%',
+        width: '95%',
         height: 50,
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        paddingHorizontal: wp('2%'),
+        marginTop: hp('1%')
     },
-    headerTitle: {
-        marginLeft: 90
+    menuIcon: {
+        height: 30,
+        width: 30
+    },
+    tabs: {
+        width: '94%',
+        marginVertical: hp('2%'),
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        height: hp('8%'),
+        padding: hp('0.4%'),
+        borderRadius: 30,
+        backgroundColor: colors.lightGrey
+    },
+    inactiveTab: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 40,
+        backgroundColor: colors.lightGrey
+    },
+    activeTab: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 40,
+        backgroundColor: colors.darkBlue,
+    },
+    scrollContainer: {
+        width: '100%',
+        borderWidth: 1
+    },
+    screenContainer: {
+        flex: 1
     }
+
 });
 
 export const ProfileScreen = StyleSheet.create({
@@ -151,7 +198,8 @@ export const ProfileScreen = StyleSheet.create({
         width: hp('13.5%'),
         borderRadius: 100,
         alignItems: 'center',
-        marginVertical: hp('3%'),
+        marginTop: hp('2%'),
+        marginBottom: hp('3%'),
         justifyContent: 'center',
         shadowColor: colors.darkGrey,
     },
@@ -172,7 +220,7 @@ export const ProfileScreen = StyleSheet.create({
         flex: 1,
         borderWidth: 1,
         borderRadius: 10,
-        borderColor: colors.darkGrey,
+        borderColor: colors.lightGrey,
         paddingHorizontal: wp('4%'),
         fontSize: NORMAL
     },
@@ -198,14 +246,14 @@ export const ProfileScreen = StyleSheet.create({
         flex: 1,
         borderWidth: 1,
         borderRadius: 10,
-        borderColor: colors.darkGrey
+        borderColor: colors.lightGrey
     },
     idTextInput: {
         backgroundColor: colors.lightGrey,
         flex: 1,
         borderWidth: 1,
         borderRadius: 10,
-        borderColor: colors.darkGrey,
+        borderColor: colors.lightGrey,
         paddingHorizontal: wp('4%'),
         fontSize: NORMAL
     }
@@ -213,13 +261,6 @@ export const ProfileScreen = StyleSheet.create({
 
 
 export const FeeOverViewScreen = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: colors.white,
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        paddingTop: 20
-    },
     button: {
         flexDirection: 'row',
         alignContent: 'center',
@@ -230,6 +271,7 @@ export const FeeOverViewScreen = StyleSheet.create({
     },
     scrollView: {
         flex: 1,
+        borderWidth: 1,
         backgroundColor: colors.white,
         alignItems: 'center',
         justifyContent: 'flex-start',
@@ -260,11 +302,11 @@ export const CardDetails = StyleSheet.create({
     },
     closedCard: {
         flexDirection: 'row',
-        width: '94%',
+        width: '97%',
         marginHorizontal: wp('1%'),
         marginVertical: hp('1%'),
         padding: hp('1.7%'),
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: colors.lightGrey,
         borderRadius: 10,
         justifyContent: 'space-between',
@@ -294,7 +336,8 @@ export const CardDetails = StyleSheet.create({
     },
     openCard: {
         flexDirection: 'column',
-        width: '94%',
+        width: '97%',
+        marginHorizontal: wp('1%'),
         marginVertical: hp('1%'),
         padding: hp('1.7%'),
         borderWidth: 2,
@@ -363,6 +406,9 @@ export const Text = StyleSheet.create({
     // colors
     black: {
         color: colors.black
+    },
+    white: {
+        color: colors.white
     },
     darkGrey: {
         color: colors.darkGrey
